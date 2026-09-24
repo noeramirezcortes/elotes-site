@@ -109,6 +109,20 @@ function eloteApp() {
             this.cart.splice(index, 1);
         },
 
+        // Calculate current price for a product based on selections
+        calculateProductPrice(productId) {
+            const product = this.products.find(p => p.id === productId);
+            const size = this.sizes.find(s => s.id === this.selectedSizes[productId]);
+            const selectedIngredientIds = this.selectedIngredients[productId] || [];
+            const selectedIngredients = this.ingredients.filter(i => 
+                selectedIngredientIds.includes(i.id)
+            );
+
+            const basePrice = product.basePrice * size.modifier;
+            const ingredientsPrice = selectedIngredients.reduce((sum, ing) => sum + ing.price, 0);
+            return basePrice + ingredientsPrice;
+        },
+
         // Calculate cart total
         calculateTotal() {
             return this.cart.reduce((sum, item) => sum + item.total, 0);

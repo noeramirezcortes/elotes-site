@@ -70,8 +70,13 @@
                                 </div>
                                 <p class="text-gray-600 text-sm mt-1" x-text="product.description"></p>
                             </div>
-                            <div class="bg-gradient-to-br from-amber-500 to-orange-600 text-white px-4 py-2 rounded-xl font-bold text-lg shadow-md">
-                                <span x-text="'$' + product.basePrice"></span>
+                            <div class="text-right">
+                                <div class="bg-gradient-to-br from-amber-500 to-orange-600 text-white px-4 py-2 rounded-xl font-bold text-lg shadow-md">
+                                    <span x-text="'$' + calculateProductPrice(product.id).toFixed(2)"></span>
+                                </div>
+                                <div class="text-xs text-gray-500 mt-1">
+                                    Base: $<span x-text="product.basePrice"></span>
+                                </div>
                             </div>
                         </div>
                         
