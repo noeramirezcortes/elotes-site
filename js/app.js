@@ -6,25 +6,25 @@ function eloteApp() {
             {
                 id: 1,
                 name: 'Elote Tradicional',
-                description: 'Elote clásico con mayonesa, crema, queso y chile',
+                description: 'La receta original de la abuela: mayonesa casera, crema fresca, queso cotija y chile de árbol',
                 basePrice: 25
             },
             {
                 id: 2,
                 name: 'Elote Esquites',
-                description: 'Elote desgranado en vaso con caldo de limón',
+                description: 'Maíz desgranado en vaso con caldito de limón, epazote y nuestro toque secreto',
                 basePrice: 30
             },
             {
                 id: 3,
                 name: 'Elote Dorado',
-                description: 'Elote asado con mantequilla y queso parmesano',
+                description: 'Asado a la parrilla con mantequilla derretida y queso parmesano gratinado',
                 basePrice: 35
             },
             {
                 id: 4,
                 name: 'Elote Supreme',
-                description: 'Elote con todos los ingredientes adicionales',
+                description: 'La experiencia completa: todos nuestros ingredientes premium en un solo elote',
                 basePrice: 40
             }
         ],

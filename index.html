@@ -7,16 +7,40 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="css/custom.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="corn-pattern min-h-screen" x-data="eloteApp()">
+<body class="corn-pattern mexican-pattern-overlay min-h-screen" x-data="eloteApp()">
     
     <!-- Hero Section -->
-    <header class="bg-gradient-to-br from-amber-600 to-orange-700 text-white py-12 px-4 shadow-lg">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-3 tracking-tight">🌽 Don Elote</h1>
-            <p class="text-xl md:text-2xl font-medium text-amber-100">Elotes Mexicanos Auténticos</p>
-            <p class="mt-4 text-amber-200 text-sm md:text-base">El sabor de la calle, en tu mesa</p>
+    <header class="relative bg-gradient-to-br from-amber-600 via-orange-600 to-red-700 text-white py-16 px-4 shadow-2xl overflow-hidden">
+        <!-- Decorative patterns -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-32 h-32 bg-yellow-300 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-40 h-40 bg-red-300 rounded-full blur-3xl"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-orange-300 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="relative max-w-4xl mx-auto text-center">
+            <div class="mb-4">
+                <span class="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium border border-white/30">
+                    🚲 Desde 1985 • Receta Original
+                </span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 tracking-tight font-playfair text-white drop-shadow-lg">🌽 Don Elote</h1>
+            <p class="text-2xl md:text-3xl font-bold text-amber-100 mb-2">Elotes Mexicanos Auténticos</p>
+            <p class="text-lg md:text-xl text-amber-200 max-w-2xl mx-auto">"El verdadero sabor de la calle, con la tradición de familia"</p>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm">
+                <div class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20">
+                    <span class="font-bold">🔥</span> Preparados al momento
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20">
+                    <span class="font-bold">🌶️</span> Salsa casera
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20">
+                    <span class="font-bold">🧀</span> Queso fresco
+                </div>
+            </div>
         </div>
     </header>
 
@@ -24,28 +48,44 @@
         
         <!-- Product Menu -->
         <section class="mb-12">
-            <h2 class="text-2xl font-bold text-amber-900 mb-6 border-b-2 border-amber-400 pb-2">Nuestros Elotes</h2>
+            <div class="text-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-amber-900 mb-2 font-playfair">🌽 Nuestros Elotes</h2>
+                <p class="text-amber-700">Preparados con amor y tradición mexicana</p>
+                <div class="flex justify-center mt-4">
+                    <div class="h-1 w-24 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full"></div>
+                </div>
+            </div>
             
             <div class="grid gap-6 md:grid-cols-2">
                 <template x-for="product in products" :key="product.id">
-                    <div class="bg-white rounded-xl shadow-md p-6 border-2 border-amber-200 hover:border-amber-400 transition-colors">
-                        <div class="flex justify-between items-start mb-4">
+                    <div class="bg-white rounded-2xl shadow-xl p-6 border-2 border-amber-200 hover:border-amber-500 hover:shadow-2xl transition-all transform hover:-translate-y-1 relative overflow-hidden">
+                        <!-- Decorative accent -->
+                        <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-amber-100 to-orange-100 rounded-bl-full opacity-50"></div>
+                        
+                        <div class="relative flex justify-between items-start mb-4">
                             <div>
-                                <h3 class="text-xl font-bold text-amber-900" x-text="product.name"></h3>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="text-2xl">🌽</span>
+                                    <h3 class="text-xl font-bold text-amber-900" x-text="product.name"></h3>
+                                </div>
                                 <p class="text-gray-600 text-sm mt-1" x-text="product.description"></p>
                             </div>
-                            <span class="text-2xl font-bold text-amber-600" x-text="'$' + product.basePrice"></span>
+                            <div class="bg-gradient-to-br from-amber-500 to-orange-600 text-white px-4 py-2 rounded-xl font-bold text-lg shadow-md">
+                                <span x-text="'$' + product.basePrice"></span>
+                            </div>
                         </div>
                         
                         <!-- Size Selector -->
                         <div class="mb-4">
-                            <label class="block text-sm font-medium text-amber-800 mb-2">Tamaño:</label>
+                            <label class="block text-sm font-bold text-amber-800 mb-2 flex items-center gap-2">
+                                <span>📏</span> Tamaño:
+                            </label>
                             <div class="flex gap-2">
                                 <template x-for="size in sizes" :key="size.id">
                                     <button 
                                         @click="selectSize(product.id, size.id)"
-                                        :class="{'bg-amber-500 text-white': selectedSizes[product.id] === size.id, 'bg-amber-100 text-amber-800 hover:bg-amber-200': selectedSizes[product.id] !== size.id}"
-                                        class="px-4 py-2 rounded-lg font-medium transition-colors text-sm"
+                                        :class="selectedSizes[product.id] === size.id ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg border-amber-600' : 'bg-amber-100 text-amber-800 hover:bg-amber-200 border-amber-200'"
+                                        class="px-4 py-2 rounded-xl font-bold transition-all text-sm border-2"
                                         x-text="size.name">
                                     </button>
                                 </template>
@@ -54,13 +94,16 @@
                         
                         <!-- Additional Ingredients -->
                         <div class="mb-4">
-                            <label class="block text-sm font-medium text-amber-800 mb-2">Ingredientes Adicionales:</label>
+                            <label class="block text-sm font-bold text-amber-800 mb-2 flex items-center gap-2">
+                                <span>🧂</span> Extras:
+                            </label>
                             <div class="flex flex-wrap gap-2">
                                 <template x-for="ingredient in ingredients" :key="ingredient.id">
                                     <button 
                                         @click="toggleIngredient(product.id, ingredient.id)"
-                                        :class="{'bg-orange-500 text-white': selectedIngredients[product.id]?.includes(ingredient.id), 'bg-orange-100 text-orange-800 hover:bg-orange-200': !selectedIngredients[product.id]?.includes(ingredient.id)}"
-                                        class="px-3 py-1.5 rounded-lg text-sm font-medium transition-colors"
+                                        :class="selectedIngredients[product.id]?.includes(ingredient.id) ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-md' : 'bg-orange-100 text-orange-800 hover:bg-orange-200'"
+                                        class="px-3 py-1.5 rounded-xl text-sm font-bold transition-all border-2 border-transparent"
+                                        :class="selectedIngredients[product.id]?.includes(ingredient.id) ? 'border-orange-600' : 'border-orange-200'"
                                         x-text="ingredient.name + ' (+$' + ingredient.price + ')'">
                                     </button>
                                 </template>
@@ -70,53 +113,109 @@
                         <!-- Add to Cart Button -->
                         <button 
                             @click="addToCart(product)"
-                            class="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white py-3 rounded-lg font-semibold hover:from-amber-600 hover:to-orange-600 transition-all shadow-md hover:shadow-lg">
-                            Agregar al Carrito
+                            class="w-full bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 text-white py-4 rounded-xl font-bold text-lg hover:from-amber-600 hover:via-orange-600 hover:to-red-600 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                            <span>🛒</span> Agregar al Pedido
                         </button>
                     </div>
                 </template>
             </div>
         </section>
 
+        <!-- About Section -->
+        <section class="mb-12 bg-white rounded-2xl shadow-xl p-8 border-2 border-amber-200 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-100 to-orange-100 rounded-bl-full opacity-50"></div>
+            
+            <div class="text-center mb-6">
+                <h2 class="text-3xl font-extrabold text-amber-900 mb-2 font-playfair">🚲 Nuestra Historia</h2>
+                <div class="flex justify-center mt-4">
+                    <div class="h-1 w-24 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full"></div>
+                </div>
+            </div>
+            
+            <div class="max-w-2xl mx-auto text-center">
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Desde 1985, Don Elote ha recorrido las calles de México, llevando el sabor auténtico de nuestros elotes a cada esquina. 
+                    Nuestra receta familiar se ha transmitido de generación en generación, manteniendo viva la tradición de la comida callejera mexicana.
+                </p>
+                <p class="text-amber-800 font-medium italic">
+                    "Cada elote es una historia de amor y tradición" - Abuelo José
+                </p>
+            </div>
+            
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                <div class="bg-amber-50 rounded-xl p-4 border border-amber-200">
+                    <div class="text-3xl mb-2">📍</div>
+                    <h3 class="font-bold text-amber-900">Ubicación</h3>
+                    <p class="text-sm text-gray-600">Esquina principal, centro</p>
+                </div>
+                <div class="bg-amber-50 rounded-xl p-4 border border-amber-200">
+                    <div class="text-3xl mb-2">🕐</div>
+                    <h3 class="font-bold text-amber-900">Horario</h3>
+                    <p class="text-sm text-gray-600">Lun-Dom: 4pm - 11pm</p>
+                </div>
+                <div class="bg-amber-50 rounded-xl p-4 border border-amber-200">
+                    <div class="text-3xl mb-2">📞</div>
+                    <h3 class="font-bold text-amber-900">Contacto</h3>
+                    <p class="text-sm text-gray-600">WhatsApp: 555-555-5555</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Shopping Cart -->
-        <section class="bg-white rounded-xl shadow-lg p-6 border-2 border-amber-300">
-            <h2 class="text-2xl font-bold text-amber-900 mb-6 border-b-2 border-amber-400 pb-2 flex items-center justify-between">
-                <span>🛒 Tu Pedido</span>
-                <span class="text-lg font-medium text-amber-700" x-text="cart.length + ' artículo(s)'"></span>
+        <section class="bg-white rounded-2xl shadow-2xl p-6 border-2 border-amber-300 relative overflow-hidden">
+            <!-- Decorative corner -->
+            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-100 to-orange-100 rounded-bl-full opacity-50"></div>
+            
+            <h2 class="text-3xl font-extrabold text-amber-900 mb-6 pb-4 flex items-center justify-between font-playfair relative">
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl">🛒</span>
+                    <span>Tu Pedido</span>
+                </div>
+                <span class="text-lg font-bold bg-amber-100 text-amber-800 px-4 py-2 rounded-full" x-text="cart.length + ' artículo(s)'"></span>
             </h2>
             
             <template x-if="cart.length === 0">
-                <p class="text-gray-500 text-center py-8">Tu carrito está vacío</p>
+                <div class="text-center py-12">
+                    <div class="text-6xl mb-4">🌽</div>
+                    <p class="text-gray-500 text-lg font-medium">Tu pedido está vacío</p>
+                    <p class="text-gray-400 text-sm mt-2">¡Agrega algunos elotes deliciosos!</p>
+                </div>
             </template>
             
             <template x-if="cart.length > 0">
                 <div>
                     <div class="space-y-4 mb-6">
                         <template x-for="(item, index) in cart" :key="index">
-                            <div class="flex justify-between items-start p-4 bg-amber-50 rounded-lg border border-amber-200">
-                                <div class="flex-1">
-                                    <h4 class="font-semibold text-amber-900" x-text="item.product.name"></h4>
-                                    <p class="text-sm text-amber-700">
-                                        <span x-text="item.size.name"></span>
+                            <div class="flex justify-between items-start p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl border-2 border-amber-200 hover:border-amber-400 transition-all relative overflow-hidden">
+                                <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-amber-400 to-orange-500"></div>
+                                <div class="flex-1 pl-4">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="text-xl">🌽</span>
+                                        <h4 class="font-bold text-amber-900 text-lg" x-text="item.product.name"></h4>
+                                    </div>
+                                    <p class="text-sm text-amber-700 font-medium">
+                                        <span class="bg-amber-200 px-2 py-1 rounded" x-text="item.size.name"></span>
                                         <template x-if="item.ingredients.length > 0">
-                                            <span x-text="' + ' + item.ingredients.map(i => i.name).join(', ')"></span>
+                                            <span class="ml-2" x-text="' + ' + item.ingredients.map(i => i.name).join(', ')"></span>
                                         </template>
                                     </p>
-                                    <p class="text-lg font-bold text-amber-600 mt-1" x-text="'$' + item.total.toFixed(2)"></p>
+                                    <p class="text-xl font-bold text-amber-600 mt-2" x-text="'$' + item.total.toFixed(2)"></p>
                                 </div>
                                 <button 
                                     @click="removeFromCart(index)"
-                                    class="text-red-500 hover:text-red-700 font-medium text-sm ml-4">
-                                    Eliminar
+                                    class="bg-red-100 text-red-600 hover:bg-red-200 px-4 py-2 rounded-xl font-bold text-sm transition-all ml-4 flex items-center gap-1">
+                                    <span>🗑️</span> Eliminar
                                 </button>
                             </div>
                         </template>
                     </div>
                     
                     <!-- Order Summary -->
-                    <div class="border-t-2 border-amber-300 pt-4 mb-6">
-                        <div class="flex justify-between items-center text-xl font-bold">
-                            <span class="text-amber-900">Total:</span>
+                    <div class="border-t-2 border-amber-300 pt-6 mb-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-4">
+                        <div class="flex justify-between items-center text-2xl font-bold">
+                            <span class="text-amber-900 flex items-center gap-2">
+                                <span>💰</span> Total:
+                            </span>
                             <span class="text-amber-600" x-text="'$' + calculateTotal().toFixed(2)"></span>
                         </div>
                     </div>
@@ -124,11 +223,11 @@
                     <!-- WhatsApp Order Button -->
                     <button 
                         @click="sendWhatsAppOrder()"
-                        class="w-full bg-green-500 text-white py-4 rounded-xl font-bold text-lg hover:bg-green-600 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-5 rounded-2xl font-bold text-xl hover:from-green-600 hover:to-green-700 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center justify-center gap-3 border-2 border-green-400">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                         </svg>
-                        Enviar Pedido por WhatsApp
+                        <span>Enviar Pedido por WhatsApp</span>
                     </button>
                 </div>
             </template>
@@ -136,10 +235,31 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-amber-800 text-amber-100 py-6 mt-12">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <p class="font-medium">🌽 Don Elote - Elotes Mexicanos Auténticos</p>
-            <p class="text-sm mt-2 text-amber-200">El mejor sabor de la calle</p>
+    <footer class="bg-gradient-to-br from-amber-800 via-orange-800 to-red-900 text-amber-100 py-10 mt-12 relative overflow-hidden">
+        <!-- Decorative patterns -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-40 h-40 bg-yellow-300 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-48 h-48 bg-red-300 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="relative max-w-4xl mx-auto px-4 text-center">
+            <div class="flex justify-center items-center gap-3 mb-4">
+                <span class="text-4xl">🌽</span>
+                <h3 class="text-2xl font-bold font-playfair">Don Elote</h3>
+                <span class="text-4xl">🌽</span>
+            </div>
+            <p class="font-medium text-lg mb-2">Elotes Mexicanos Auténticos</p>
+            <p class="text-amber-200 text-sm mb-4">"Donde la tradición se encuentra con el sabor"</p>
+            
+            <div class="flex justify-center gap-6 text-2xl mb-4">
+                <span>🔥</span>
+                <span>🌶️</span>
+                <span>🧀</span>
+                <span>🚲</span>
+                <span>🌽</span>
+            </div>
+            
+            <p class="text-xs text-amber-300">© 2024 Don Elote • Hecho con ❤️ y maíz</p>
         </div>
     </footer>
 
