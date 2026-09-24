@@ -7,39 +7,95 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="css/custom.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="corn-pattern mexican-pattern-overlay min-h-screen" x-data="eloteApp()">
+<body class="mexican-pattern-subtle min-h-screen" x-data="eloteApp()">
     
     <!-- Hero Section -->
-    <header class="relative bg-gradient-to-br from-amber-600 via-orange-600 to-red-700 text-white py-16 px-4 shadow-2xl overflow-hidden">
-        <!-- Decorative patterns -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-0 left-0 w-32 h-32 bg-yellow-300 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-0 right-0 w-40 h-40 bg-red-300 rounded-full blur-3xl"></div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-orange-300 rounded-full blur-3xl"></div>
+    <header class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+        <!-- Sophisticated gradient background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-stone-900 via-amber-950 to-stone-900"></div>
+        
+        <!-- Subtle Mexican-inspired pattern overlay -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, #f59e0b 0, #f59e0b 1px, transparent 0, transparent 50%); background-size: 20px 20px;"></div>
         </div>
         
-        <div class="relative max-w-4xl mx-auto text-center">
-            <div class="mb-4">
-                <span class="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium border border-white/30">
-                    🚲 Desde 1985 • Receta Original
-                </span>
+        <!-- Decorative corn elements -->
+        <div class="absolute top-20 left-10 text-8xl opacity-10 transform -rotate-12">🌽</div>
+        <div class="absolute bottom-20 right-10 text-8xl opacity-10 transform rotate-12">🌽</div>
+        <div class="absolute top-1/3 right-1/4 text-6xl opacity-5">🌶️</div>
+        <div class="absolute bottom-1/3 left-1/4 text-6xl opacity-5">🧀</div>
+        
+        <!-- Ambient lighting effects -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl"></div>
+        
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <!-- Heritage badge -->
+            <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-6 py-3 mb-8 backdrop-blur-sm">
+                <span class="text-amber-400 text-sm font-medium tracking-widest uppercase">Est. 1985</span>
+                <span class="text-amber-600">•</span>
+                <span class="text-amber-400 text-sm font-medium tracking-widest uppercase">Receta Original</span>
             </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 tracking-tight font-playfair text-white drop-shadow-lg">🌽 Don Elote</h1>
-            <p class="text-2xl md:text-3xl font-bold text-amber-100 mb-2">Elotes Mexicanos Auténticos</p>
-            <p class="text-lg md:text-xl text-amber-200 max-w-2xl mx-auto">"El verdadero sabor de la calle, con la tradición de familia"</p>
             
-            <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm">
-                <div class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20">
-                    <span class="font-bold">🔥</span> Preparados al momento
+            <!-- Main title with sophisticated typography -->
+            <h1 class="text-6xl md:text-8xl lg:text-9xl font-extrabold text-white mb-6 font-playfair tracking-tight leading-none">
+                <span class="block">Don</span>
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-300">Elote</span>
+            </h1>
+            
+            <!-- Subtitle with elegant spacing -->
+            <p class="text-xl md:text-2xl text-amber-200/80 font-light tracking-wide mb-4 uppercase">
+                Elotes Mexicanos Auténticos
+            </p>
+            
+            <!-- Elegant divider -->
+            <div class="flex items-center justify-center gap-4 mb-8">
+                <div class="h-px w-16 bg-gradient-to-r from-transparent to-amber-500/50"></div>
+                <div class="w-2 h-2 bg-amber-500 rounded-full"></div>
+                <div class="h-px w-16 bg-gradient-to-l from-transparent to-amber-500/50"></div>
+            </div>
+            
+            <!-- Tagline with sophisticated typography -->
+            <p class="text-lg md:text-xl text-stone-300 max-w-2xl mx-auto font-light leading-relaxed mb-12">
+                Donde la tradición familiar se encuentra con el sabor auténtico de la calle
+            </p>
+            
+            <!-- Call to action -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#menu" class="group relative inline-flex items-center gap-3 bg-gradient-to-r from-amber-500 to-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl shadow-amber-500/30 hover:shadow-amber-500/50 transition-all duration-300 hover:scale-105">
+                    <span>Ver Menú</span>
+                    <svg class="w-5 h-5 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </a>
+                <a href="#contact" class="inline-flex items-center gap-3 border border-amber-500/30 text-amber-300 px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber-500/10 transition-all duration-300">
+                    <span>Contacto</span>
+                </a>
+            </div>
+            
+            <!-- Quality indicators -->
+            <div class="mt-16 grid grid-cols-3 gap-8 max-w-md mx-auto">
+                <div class="text-center">
+                    <div class="text-3xl mb-2">🔥</div>
+                    <p class="text-xs text-stone-400 uppercase tracking-wider">Fresco</p>
                 </div>
-                <div class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20">
-                    <span class="font-bold">🌶️</span> Salsa casera
+                <div class="text-center">
+                    <div class="text-3xl mb-2">🌶️</div>
+                    <p class="text-xs text-stone-400 uppercase tracking-wider">Casero</p>
                 </div>
-                <div class="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20">
-                    <span class="font-bold">🧀</span> Queso fresco
+                <div class="text-center">
+                    <div class="text-3xl mb-2">🧀</div>
+                    <p class="text-xs text-stone-400 uppercase tracking-wider">Premium</p>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="w-6 h-10 border-2 border-amber-500/30 rounded-full flex justify-center pt-2">
+                <div class="w-1 h-3 bg-amber-500/50 rounded-full"></div>
             </div>
         </div>
     </header>
@@ -47,192 +103,212 @@
     <main class="max-w-4xl mx-auto px-4 py-8">
         
         <!-- Product Menu -->
-        <section class="mb-12">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-amber-900 mb-2 font-playfair">🌽 Nuestros Elotes</h2>
-                <p class="text-amber-700">Preparados con amor y tradición mexicana</p>
-                <div class="flex justify-center mt-4">
-                    <div class="h-1 w-24 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full"></div>
+        <section id="menu" class="mb-20">
+            <div class="text-center mb-16">
+                <span class="text-amber-600 text-sm font-semibold tracking-widest uppercase mb-4 block">Nuestra Selección</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-stone-900 mb-4 font-playfair">Elotes Artesanales</h2>
+                <p class="text-stone-600 max-w-2xl mx-auto text-lg">Cada elote es preparado con ingredientes frescos y nuestra receta familiar de tres generaciones</p>
+                
+                <!-- Elegant divider -->
+                <div class="flex items-center justify-center gap-4 mt-8">
+                    <div class="h-px w-24 bg-gradient-to-r from-transparent to-amber-500"></div>
+                    <div class="w-2 h-2 bg-amber-500 rounded-full"></div>
+                    <div class="h-px w-24 bg-gradient-to-l from-transparent to-amber-500"></div>
                 </div>
             </div>
             
-            <div class="grid gap-6 md:grid-cols-2">
+            <div class="grid gap-8 md:grid-cols-2">
                 <template x-for="product in products" :key="product.id">
-                    <div class="bg-white rounded-2xl shadow-xl p-6 border-2 border-amber-200 hover:border-amber-500 hover:shadow-2xl transition-all transform hover:-translate-y-1 relative overflow-hidden">
-                        <!-- Decorative accent -->
-                        <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-amber-100 to-orange-100 rounded-bl-full opacity-50"></div>
+                    <div class="group relative bg-white rounded-3xl shadow-2xl overflow-hidden border border-stone-100 hover:border-amber-200 transition-all duration-500 hover:shadow-amber-500/10">
+                        <!-- Subtle gradient accent -->
+                        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         
-                        <div class="relative flex justify-between items-start mb-4">
-                            <div>
-                                <div class="flex items-center gap-2 mb-2">
-                                    <span class="text-2xl">🌽</span>
-                                    <h3 class="text-xl font-bold text-amber-900" x-text="product.name"></h3>
+                        <!-- Premium content -->
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <span class="text-3xl">🌽</span>
+                                        <h3 class="text-2xl font-bold text-stone-900 font-playfair" x-text="product.name"></h3>
+                                    </div>
+                                    <p class="text-stone-600 leading-relaxed" x-text="product.description"></p>
                                 </div>
-                                <p class="text-gray-600 text-sm mt-1" x-text="product.description"></p>
-                            </div>
-                            <div class="text-right">
-                                <div class="bg-gradient-to-br from-amber-500 to-orange-600 text-white px-4 py-2 rounded-xl font-bold text-lg shadow-md">
-                                    <span x-text="'$' + calculateProductPrice(product.id).toFixed(2)"></span>
+                                <div class="text-right ml-6">
+                                    <div class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600 font-playfair">
+                                        $<span x-text="calculateProductPrice(product.id).toFixed(2)"></span>
+                                    </div>
+                                    <div class="text-xs text-stone-400 mt-1">
+                                        desde $<span x-text="product.basePrice"></span>
+                                    </div>
                                 </div>
-                                <div class="text-xs text-gray-500 mt-1">
-                                    Base: $<span x-text="product.basePrice"></span>
+                            </div>
+                            
+                            <!-- Elegant size selector -->
+                            <div class="mb-6">
+                                <label class="block text-xs font-semibold text-stone-500 uppercase tracking-wider mb-3">Tamaño</label>
+                                <div class="flex gap-3">
+                                    <template x-for="size in sizes" :key="size.id">
+                                        <button 
+                                            @click="selectSize(product.id, size.id)"
+                                            :class="selectedSizes[product.id] === size.id ? 'bg-stone-900 text-white border-stone-900' : 'bg-stone-50 text-stone-700 border-stone-200 hover:border-stone-300'"
+                                            class="flex-1 py-3 px-4 rounded-xl font-semibold text-sm border-2 transition-all duration-300"
+                                            x-text="size.name">
+                                        </button>
+                                    </template>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- Size Selector -->
-                        <div class="mb-4">
-                            <label class="block text-sm font-bold text-amber-800 mb-2 flex items-center gap-2">
-                                <span>📏</span> Tamaño:
-                            </label>
-                            <div class="flex gap-2">
-                                <template x-for="size in sizes" :key="size.id">
-                                    <button 
-                                        @click="selectSize(product.id, size.id)"
-                                        :class="selectedSizes[product.id] === size.id ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg border-amber-600' : 'bg-amber-100 text-amber-800 hover:bg-amber-200 border-amber-200'"
-                                        class="px-4 py-2 rounded-xl font-bold transition-all text-sm border-2"
-                                        x-text="size.name">
-                                    </button>
-                                </template>
+                            
+                            <!-- Premium ingredient selector -->
+                            <div class="mb-6">
+                                <label class="block text-xs font-semibold text-stone-500 uppercase tracking-wider mb-3">Ingredientes Premium</label>
+                                <div class="flex flex-wrap gap-2">
+                                    <template x-for="ingredient in ingredients" :key="ingredient.id">
+                                        <button 
+                                            @click="toggleIngredient(product.id, ingredient.id)"
+                                            :class="selectedIngredients[product.id]?.includes(ingredient.id) ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white border-amber-500' : 'bg-stone-50 text-stone-700 border-stone-200 hover:border-stone-300'"
+                                            class="px-4 py-2 rounded-lg text-sm font-medium border-2 transition-all duration-300"
+                                            x-text="ingredient.name + ' (+$' + ingredient.price + ')'">
+                                        </button>
+                                    </template>
+                                </div>
                             </div>
+                            
+                            <!-- Premium CTA button -->
+                            <button 
+                                @click="addToCart(product)"
+                                class="w-full bg-gradient-to-r from-stone-900 to-stone-800 text-white py-4 rounded-xl font-bold text-lg hover:from-stone-800 hover:to-stone-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-3 group-hover:shadow-amber-500/20">
+                                <span>Agregar al Pedido</span>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                            </button>
                         </div>
-                        
-                        <!-- Additional Ingredients -->
-                        <div class="mb-4">
-                            <label class="block text-sm font-bold text-amber-800 mb-2 flex items-center gap-2">
-                                <span>🧂</span> Extras:
-                            </label>
-                            <div class="flex flex-wrap gap-2">
-                                <template x-for="ingredient in ingredients" :key="ingredient.id">
-                                    <button 
-                                        @click="toggleIngredient(product.id, ingredient.id)"
-                                        :class="selectedIngredients[product.id]?.includes(ingredient.id) ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-md' : 'bg-orange-100 text-orange-800 hover:bg-orange-200'"
-                                        class="px-3 py-1.5 rounded-xl text-sm font-bold transition-all border-2 border-transparent"
-                                        :class="selectedIngredients[product.id]?.includes(ingredient.id) ? 'border-orange-600' : 'border-orange-200'"
-                                        x-text="ingredient.name + ' (+$' + ingredient.price + ')'">
-                                    </button>
-                                </template>
-                            </div>
-                        </div>
-                        
-                        <!-- Add to Cart Button -->
-                        <button 
-                            @click="addToCart(product)"
-                            class="w-full bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 text-white py-4 rounded-xl font-bold text-lg hover:from-amber-600 hover:via-orange-600 hover:to-red-600 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-                            <span>🛒</span> Agregar al Pedido
-                        </button>
                     </div>
                 </template>
             </div>
         </section>
 
         <!-- About Section -->
-        <section class="mb-12 bg-white rounded-2xl shadow-xl p-8 border-2 border-amber-200 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-100 to-orange-100 rounded-bl-full opacity-50"></div>
-            
-            <div class="text-center mb-6">
-                <h2 class="text-3xl font-extrabold text-amber-900 mb-2 font-playfair">🚲 Nuestra Historia</h2>
-                <div class="flex justify-center mt-4">
-                    <div class="h-1 w-24 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full"></div>
-                </div>
-            </div>
-            
-            <div class="max-w-2xl mx-auto text-center">
-                <p class="text-gray-700 leading-relaxed mb-4">
-                    Desde 1985, Don Elote ha recorrido las calles de México, llevando el sabor auténtico de nuestros elotes a cada esquina. 
-                    Nuestra receta familiar se ha transmitido de generación en generación, manteniendo viva la tradición de la comida callejera mexicana.
-                </p>
-                <p class="text-amber-800 font-medium italic">
-                    "Cada elote es una historia de amor y tradición" - Abuelo José
-                </p>
-            </div>
-            
-            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-                <div class="bg-amber-50 rounded-xl p-4 border border-amber-200">
-                    <div class="text-3xl mb-2">📍</div>
-                    <h3 class="font-bold text-amber-900">Ubicación</h3>
-                    <p class="text-sm text-gray-600">Esquina principal, centro</p>
-                </div>
-                <div class="bg-amber-50 rounded-xl p-4 border border-amber-200">
-                    <div class="text-3xl mb-2">🕐</div>
-                    <h3 class="font-bold text-amber-900">Horario</h3>
-                    <p class="text-sm text-gray-600">Lun-Dom: 4pm - 11pm</p>
-                </div>
-                <div class="bg-amber-50 rounded-xl p-4 border border-amber-200">
-                    <div class="text-3xl mb-2">📞</div>
-                    <h3 class="font-bold text-amber-900">Contacto</h3>
-                    <p class="text-sm text-gray-600">WhatsApp: 555-555-5555</p>
+        <section class="mb-20">
+            <div class="bg-gradient-to-br from-stone-50 to-amber-50 rounded-3xl p-12 relative overflow-hidden">
+                <!-- Subtle decorative elements -->
+                <div class="absolute top-10 right-10 text-6xl opacity-5">🌽</div>
+                <div class="absolute bottom-10 left-10 text-6xl opacity-5">🚲</div>
+                
+                <div class="relative max-w-4xl mx-auto text-center">
+                    <span class="text-amber-600 text-sm font-semibold tracking-widest uppercase mb-4 block">Nuestra Historia</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-stone-900 mb-6 font-playfair">Tres Generaciones de Sabor</h2>
+                    
+                    <!-- Elegant divider -->
+                    <div class="flex items-center justify-center gap-4 mb-8">
+                        <div class="h-px w-24 bg-gradient-to-r from-transparent to-amber-500"></div>
+                        <div class="w-2 h-2 bg-amber-500 rounded-full"></div>
+                        <div class="h-px w-24 bg-gradient-to-l from-transparent to-amber-500"></div>
+                    </div>
+                    
+                    <p class="text-xl text-stone-700 leading-relaxed mb-8 max-w-2xl mx-auto">
+                        Desde 1985, Don Elote ha recorrido las calles de México, llevando el sabor auténtico de nuestros elotes a cada esquina. Nuestra receta familiar se ha transmitido de generación en generación, manteniendo viva la tradición de la comida callejera mexicana.
+                    </p>
+                    
+                    <blockquote class="relative mb-12">
+                        <div class="text-6xl text-amber-300 absolute -top-4 -left-4 opacity-50">"</div>
+                        <p class="text-2xl text-stone-800 font-playfair italic relative z-10">
+                            Cada elote es una historia de amor y tradición
+                        </p>
+                        <cite class="text-stone-600 block mt-2 not-italic">— Abuelo José, Fundador</cite>
+                    </blockquote>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-2xl p-6 shadow-lg border border-stone-100">
+                            <div class="text-4xl mb-4">📍</div>
+                            <h3 class="font-bold text-stone-900 mb-2">Ubicación</h3>
+                            <p class="text-stone-600">Esquina Principal, Centro</p>
+                        </div>
+                        <div class="bg-white rounded-2xl p-6 shadow-lg border border-stone-100">
+                            <div class="text-4xl mb-4">🕐</div>
+                            <h3 class="font-bold text-stone-900 mb-2">Horario</h3>
+                            <p class="text-stone-600">Lun-Dom: 4pm - 11pm</p>
+                        </div>
+                        <div class="bg-white rounded-2xl p-6 shadow-lg border border-stone-100">
+                            <div class="text-4xl mb-4">📞</div>
+                            <h3 class="font-bold text-stone-900 mb-2">Contacto</h3>
+                            <p class="text-stone-600">WhatsApp: 555-555-5555</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Shopping Cart -->
-        <section class="bg-white rounded-2xl shadow-2xl p-6 border-2 border-amber-300 relative overflow-hidden">
-            <!-- Decorative corner -->
-            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-100 to-orange-100 rounded-bl-full opacity-50"></div>
+        <section class="bg-white rounded-3xl shadow-2xl p-8 border border-stone-100 relative overflow-hidden">
+            <!-- Subtle accent -->
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500"></div>
             
-            <h2 class="text-3xl font-extrabold text-amber-900 mb-6 pb-4 flex items-center justify-between font-playfair relative">
-                <div class="flex items-center gap-3">
-                    <span class="text-3xl">🛒</span>
-                    <span>Tu Pedido</span>
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <span class="text-amber-600 text-sm font-semibold tracking-widest uppercase mb-2 block">Tu Pedido</span>
+                    <h2 class="text-3xl font-extrabold text-stone-900 font-playfair">Resumen</h2>
                 </div>
-                <span class="text-lg font-bold bg-amber-100 text-amber-800 px-4 py-2 rounded-full" x-text="cart.length + ' artículo(s)'"></span>
-            </h2>
+                <div class="bg-stone-100 rounded-full px-6 py-3">
+                    <span class="text-stone-700 font-semibold" x-text="cart.length + ' items'"></span>
+                </div>
+            </div>
             
             <template x-if="cart.length === 0">
-                <div class="text-center py-12">
-                    <div class="text-6xl mb-4">🌽</div>
-                    <p class="text-gray-500 text-lg font-medium">Tu pedido está vacío</p>
-                    <p class="text-gray-400 text-sm mt-2">¡Agrega algunos elotes deliciosos!</p>
+                <div class="text-center py-16">
+                    <div class="text-6xl mb-6 opacity-50">🌽</div>
+                    <p class="text-stone-500 text-xl font-medium mb-2">Tu pedido está vacío</p>
+                    <p class="text-stone-400">Explora nuestro menú y agrega tus elotes favoritos</p>
                 </div>
             </template>
             
             <template x-if="cart.length > 0">
                 <div>
-                    <div class="space-y-4 mb-6">
+                    <div class="space-y-4 mb-8">
                         <template x-for="(item, index) in cart" :key="index">
-                            <div class="flex justify-between items-start p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl border-2 border-amber-200 hover:border-amber-400 transition-all relative overflow-hidden">
-                                <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-amber-400 to-orange-500"></div>
-                                <div class="flex-1 pl-4">
-                                    <div class="flex items-center gap-2 mb-1">
-                                        <span class="text-xl">🌽</span>
-                                        <h4 class="font-bold text-amber-900 text-lg" x-text="item.product.name"></h4>
-                                    </div>
-                                    <p class="text-sm text-amber-700 font-medium">
-                                        <span class="bg-amber-200 px-2 py-1 rounded" x-text="item.size.name"></span>
+                            <div class="group flex items-center gap-4 p-6 bg-stone-50 rounded-2xl border border-stone-100 hover:border-amber-200 transition-all duration-300">
+                                <div class="w-16 h-16 bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">
+                                    🌽
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="font-bold text-stone-900 text-lg mb-1" x-text="item.product.name"></h4>
+                                    <div class="flex items-center gap-2 text-sm text-stone-600">
+                                        <span class="bg-amber-100 text-amber-800 px-2 py-1 rounded-md text-xs font-semibold" x-text="item.size.name"></span>
                                         <template x-if="item.ingredients.length > 0">
-                                            <span class="ml-2" x-text="' + ' + item.ingredients.map(i => i.name).join(', ')"></span>
+                                            <span x-text="'• ' + item.ingredients.map(i => i.name).join(', ')"></span>
                                         </template>
-                                    </p>
-                                    <p class="text-xl font-bold text-amber-600 mt-2" x-text="'$' + item.total.toFixed(2)"></p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-xl font-bold text-stone-900" x-text="'$' + item.total.toFixed(2)"></p>
                                 </div>
                                 <button 
                                     @click="removeFromCart(index)"
-                                    class="bg-red-100 text-red-600 hover:bg-red-200 px-4 py-2 rounded-xl font-bold text-sm transition-all ml-4 flex items-center gap-1">
-                                    <span>🗑️</span> Eliminar
+                                    class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-red-50 text-red-600 hover:bg-red-100 p-3 rounded-xl">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                    </svg>
                                 </button>
                             </div>
                         </template>
                     </div>
                     
                     <!-- Order Summary -->
-                    <div class="border-t-2 border-amber-300 pt-6 mb-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-4">
-                        <div class="flex justify-between items-center text-2xl font-bold">
-                            <span class="text-amber-900 flex items-center gap-2">
-                                <span>💰</span> Total:
-                            </span>
-                            <span class="text-amber-600" x-text="'$' + calculateTotal().toFixed(2)"></span>
+                    <div class="bg-gradient-to-r from-stone-900 to-stone-800 rounded-2xl p-6 mb-6">
+                        <div class="flex justify-between items-center text-white">
+                            <span class="text-lg font-medium">Total</span>
+                            <span class="text-3xl font-bold font-playfair">$<span x-text="calculateTotal().toFixed(2)"></span></span>
                         </div>
                     </div>
                     
                     <!-- WhatsApp Order Button -->
                     <button 
                         @click="sendWhatsAppOrder()"
-                        class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-5 rounded-2xl font-bold text-xl hover:from-green-600 hover:to-green-700 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center justify-center gap-3 border-2 border-green-400">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-5 rounded-2xl font-bold text-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center gap-3">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                         </svg>
-                        <span>Enviar Pedido por WhatsApp</span>
+                        <span>Completar Pedido por WhatsApp</span>
                     </button>
                 </div>
             </template>
@@ -240,31 +316,74 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gradient-to-br from-amber-800 via-orange-800 to-red-900 text-amber-100 py-10 mt-12 relative overflow-hidden">
-        <!-- Decorative patterns -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-0 left-0 w-40 h-40 bg-yellow-300 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-0 right-0 w-48 h-48 bg-red-300 rounded-full blur-3xl"></div>
+    <footer id="contact" class="bg-stone-900 text-stone-300 py-16 mt-20 relative overflow-hidden">
+        <!-- Subtle pattern overlay -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, #f59e0b 0, #f59e0b 1px, transparent 0, transparent 50%); background-size: 30px 30px;"></div>
         </div>
         
-        <div class="relative max-w-4xl mx-auto px-4 text-center">
-            <div class="flex justify-center items-center gap-3 mb-4">
-                <span class="text-4xl">🌽</span>
-                <h3 class="text-2xl font-bold font-playfair">Don Elote</h3>
-                <span class="text-4xl">🌽</span>
+        <div class="relative max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">🌽</span>
+                        <h3 class="text-2xl font-bold text-white font-playfair">Don Elote</h3>
+                    </div>
+                    <p class="text-stone-400 leading-relaxed mb-4">
+                        Tres generaciones de tradición familiar en cada elote. Desde 1985 llevando el sabor auténtico de México.
+                    </p>
+                    <div class="flex gap-4">
+                        <span class="text-2xl opacity-60">🔥</span>
+                        <span class="text-2xl opacity-60">🌶️</span>
+                        <span class="text-2xl opacity-60">🧀</span>
+                    </div>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contacto</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <span class="text-amber-500">📍</span>
+                            <span class="text-stone-400">Esquina Principal, Centro</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-amber-500">📞</span>
+                            <span class="text-stone-400">WhatsApp: 555-555-5555</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-amber-500">🕐</span>
+                            <span class="text-stone-400">Lun-Dom: 4pm - 11pm</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hours -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Horario</h4>
+                    <div class="space-y-2 text-stone-400">
+                        <div class="flex justify-between">
+                            <span>Lunes - Viernes</span>
+                            <span>4pm - 11pm</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Sábado</span>
+                            <span>3pm - 12am</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Domingo</span>
+                            <span>4pm - 10pm</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p class="font-medium text-lg mb-2">Elotes Mexicanos Auténticos</p>
-            <p class="text-amber-200 text-sm mb-4">"Donde la tradición se encuentra con el sabor"</p>
             
-            <div class="flex justify-center gap-6 text-2xl mb-4">
-                <span>🔥</span>
-                <span>🌶️</span>
-                <span>🧀</span>
-                <span>🚲</span>
-                <span>🌽</span>
+            <!-- Bottom bar -->
+            <div class="border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-stone-500 text-sm">© 2024 Don Elote. Todos los derechos reservados.</p>
+                <p class="text-stone-500 text-sm">Hecho con tradición y maíz 🌽</p>
             </div>
-            
-            <p class="text-xs text-amber-300">© 2024 Don Elote • Hecho con ❤️ y maíz</p>
         </div>
     </footer>
 
